@@ -5,7 +5,7 @@ Comparison of modern frontend framework with a JSONPlaceholder backend
 
 The following frameworks are being compared:
 - Gatsby (React)
-- NextJS (React)
+- Next.js (React)
 - Nuxt.js (Vue)
 - Sapper (Svelte)
 
