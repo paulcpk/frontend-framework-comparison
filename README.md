@@ -20,10 +20,11 @@ The objective is to build a simple blog with the [DEV.to API](https://docs.dev.t
 
 ## Thoughts
 
-
 ### Nuxt.js
 
 Implementation was quick and easy. Everything that I needed (and more) was there and easy to find. Very mature project.
+
+UPDATE: still some issues with the statically rendered HTML, doesn't survive a refresh. Needs more investigation.
 
 Time to implement: ~ 1h
 
@@ -43,4 +44,14 @@ Time to implement: ~ 2h
 
 Sapper was a breeze, it was even easier than with Nuxt.js. Everything was super organized, logical and where I expected it. Besides that, Svelte is by far the most performant technology of them all. Impressive to see this kind of quality on such an early release (0.0.1 for Sapper).
 
+BONUS: Sapper also comes with an excellently configured service worker out of the box.
+
 Time to implement: ~ 0.5h
+
+## Ranking
+
+My personal ranking:
+1. Sapper (Clearly best developer experience and performance)
+2. Nuxt.js (Easy to use, performant and lots of packages/plugins)
+3. Gatsby (Very powerful, albeit somewhat complicated)
+4. Next.js (Can be used productively, but disadvantages compared with the other contenders)

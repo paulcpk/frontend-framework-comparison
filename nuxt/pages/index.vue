@@ -7,12 +7,18 @@
         </h1>
       </header>
       <main class="post-container">
-        <Post
+        <article
+          class="post post-list-item"
           v-for="post in posts"
           v-bind:key="post.id"
-          v-bind:postId="post.id"
-          v-bind:title="post.title"
-        />
+        >
+          <h3 class="post-title">{{ post.title }}</h3>
+          <nuxt-link
+            :to="{ name: 'post-id', params: { id: post.id } }"
+            class="btn btn-secondary"
+            >Read more</nuxt-link
+          >
+        </article>
       </main>
     </div>
   </div>
@@ -20,7 +26,6 @@
 
 <script>
 import axios from 'axios'
-import Post from '~/components/Post.vue'
 
 export default {
   async asyncData({ params }) {
@@ -31,9 +36,6 @@ export default {
     return {
       title: 'Nuxt example Blog'
     }
-  },
-  components: {
-    Post
   }
 }
 </script>
