@@ -42,7 +42,7 @@ Time to implement: ~ 2h
 
 ### Sapper
 
-Sapper was a breeze, it was even easier than with Nuxt.js. Everything was super organized, logical and where I expected it. Besides that, Svelte is by far the most performant technology of them all. Impressive to see this kind of quality on such an early release (0.0.1 for Sapper).
+Sapper was a breeze, it was even easier than with Nuxt.js. Everything was super organized, logical and where I expected it. Besides that, Svelte is by far the most performant technology of them all. Impressive to see this kind of quality on such an early release (0.0.1 for Sapper). However, there are a lot of open issues on Github and lacking support for commonplace technologies like AMP.
 
 BONUS: Sapper also comes with an excellently configured service worker out of the box.
 
@@ -51,7 +51,7 @@ Time to implement: ~ 0.5h
 ## Ranking
 
 My personal ranking:
-1. Sapper (Clearly best developer experience and performance)
-2. Nuxt.js (Easy to use, performant and lots of packages/plugins)
+1. Nuxt.js (Easy to use, performant and lots of packages/plugins)
+2. Sapper (Clearly best developer experience and performance, but still a bit immature)
 3. Gatsby (Very powerful, albeit somewhat complicated)
 4. Next.js (Can be used productively, but disadvantages compared with the other contenders)
