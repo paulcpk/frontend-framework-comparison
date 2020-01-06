@@ -10,7 +10,13 @@ The following frameworks are being compared:
 - Sapper (Svelte)
 
 The objective is to build a simple blog with the [DEV.to API](https://docs.dev.to/api/) as a backend. 
-Every example app should use bootstrap, display a list of posts and a single post view and should be rendered as static html.
+
+Every example app should:
+- Use Bootstrap for styling
+- Support static HTML rendering
+- Display a list of posts, queried from dev.to
+- Navigate to the post when clicked on a "Read more" button
+- Update the page title accordingly
 
 ## Ranking
 

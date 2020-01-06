@@ -1,7 +1,11 @@
 <template>
   <article class="post post-list-item">
     <h3 class="post-title">{{ title }}</h3>
-    <a :href="`/post/${postId}`" class="btn btn-secondary">Read more</a>
+    <nuxt-link
+      :to="{ name: 'post-id', params: { id: postId } }"
+      class="btn btn-secondary"
+      >Read more</nuxt-link
+    >
   </article>
 </template>
 
@@ -13,8 +17,7 @@ export default {
     'commentsCount',
     'publishedAt',
     'readablePublishedAt'
-  ],
-  name: 'post'
+  ]
 }
 </script>
 
