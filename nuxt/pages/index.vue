@@ -6,14 +6,14 @@
           Nuxt example Blog
         </h1>
       </header>
-      <div class="post-container">
+      <main class="post-container">
         <Post
           v-for="post in posts"
           v-bind:key="post.id"
           v-bind:postId="post.id"
           v-bind:title="post.title"
         />
-      </div>
+      </main>
     </div>
   </div>
 </template>

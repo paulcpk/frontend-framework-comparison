@@ -11,8 +11,8 @@ The following frameworks are being compared:
 
 The objective is to build a simple blog with the [DEV.to API](https://docs.dev.to/api/) as a backend. 
 
-Every example app should:
-- Use Bootstrap for styling
+*Every example app should:*
+- Use Bootstrap for styling (just CSS, no functional components)
 - Support static HTML rendering
 - Display a list of posts, queried from dev.to
 - Navigate to the post when clicked on a "Read more" button
