@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Grid from '../components/Grid'
 
-export default function Home() {
+function Home({ data }) {
   return (
     <>
       <Head>
@@ -11,8 +11,17 @@ export default function Home() {
       </Head>
 
       <main className="container">
-        <Grid items={[1, 1, 1, 1, 1]} />
+        <Grid items={data.results} />
       </main>
     </>
   )
 }
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=60`)
+  const data = await res.json()
+
+  return { props: { data } }
+}
+
+export default Home

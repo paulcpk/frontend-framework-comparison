@@ -1,24 +1,18 @@
+import Link from "next/link"
+
 function Navigation() {
   return (
     <nav
-      className="navigation navbar container"
-      role="navigation"
-      aria-label="main navigation"
+      className="navigation container"
     >
-      <div className="navbar-brand">
-        <a className="navbar-item" href="#">
-          <img alt="Pokedex App" src="/images/pokedex-logo.png" width="120" />
-        </a>
-        <a
-          role="button"
-          class="navbar-burger is-active"
-          aria-label="menu"
-          aria-expanded="false"
+      <div className="logo">
+        <Link
+          href="/"
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+          <a className="navbar-item" href="#">
+            <img alt="Pokedex App" src="/images/pokedex-logo.png" width="120" />
+          </a>
+        </Link>
       </div>
 
       <div className="navbar-menu is-active">
