@@ -9,7 +9,7 @@ function ItemCard({ postId, name }) {
       }}
     >
       <a>
-        <div className="card">
+        <div className="tile">
           <figure className="image">
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${postId}.png`}
@@ -17,7 +17,7 @@ function ItemCard({ postId, name }) {
             />
           </figure>
           <div className="content">
-            <h3>{name}</h3>
+            <h3><span className="prefix">#{postId}:&nbsp;</span>{name}</h3>
           </div>
         </div>
       </a>

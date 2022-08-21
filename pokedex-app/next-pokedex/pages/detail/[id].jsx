@@ -1,7 +1,21 @@
+import Head from 'next/head'
+import Link from 'next/link'
+import ItemCard from '../../components/ItemCard'
+
 function Detail({ data }) {
   console.log('data', data)
 
-  return <p>Detail page</p>
+  return (
+    <>
+      <Head>
+        <title>Pokedex App - {data.name}</title>
+      </Head>
+      <Link href="/">
+        <a className="button is-ghost mb-4">&lsaquo;&nbsp;Back</a>
+      </Link>
+      <ItemCard postId={data.id} {...data} />
+    </>
+  )
 }
 
 export async function getServerSideProps(context) {
