@@ -10,6 +10,7 @@
     "test": "next lint && jest",
     "test:jest": "jest --watch",
     "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
     "test:ci": "next lint && jest --ci && playwright test"
   },
   "dependencies": {
