@@ -25,6 +25,8 @@ The objective is to build a simple Pokedex App using [PokeApi](https://pokeapi.c
 
 ### Next.js
 
+The latest version of Next.js causes `Parsing error: Cannot find module 'next/babel'` when importing modules out of the box - can be fixed easily, however not very reassuring
+
 Time to implement: ~ 0h
 
 ### Nuxt.js
