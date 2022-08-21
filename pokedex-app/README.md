@@ -42,7 +42,12 @@ In this run, I spent some time adding and removing different CSS or component li
 
 Although quite feature rich in total, Next.js feels surprisingly rugged to me, considering it's one, if not the most used framework used in conjunction with React. I must say, the [Next.js examples folder](https://github.com/vercel/next.js/tree/canary/examples/with-jest) is a joy to peruse, very helpful.
 
-Time to implement: ~ 4h
+Time to implement: ~ 6.5h
+
+Breakdown:
+- App Setup and UI: 4.5h
+- Testing Setup: 1.5h
+- CI/CD: 0.5h
 
 ### Nuxt.js
 
