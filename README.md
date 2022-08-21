@@ -15,7 +15,7 @@ The following frameworks are being compared:
 
 The objective is to build a simple Pokedex App using (PokeApi)[https://pokeapi.co/] as a backend.
 
-(Read more)[https://github.com/paulcpk/frontend-framework-comparison/blob/master/pokedex-app/README.md]
+[Read more](https://github.com/paulcpk/frontend-framework-comparison/blob/master/pokedex-app/README.md)
 
 
 ## Total Ranking

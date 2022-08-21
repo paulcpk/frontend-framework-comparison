@@ -1,6 +1,6 @@
 # Pokedex App
 
-The objective is to build a simple Pokedex App using (PokeApi)[https://pokeapi.co/] as a backend.
+The objective is to build a simple Pokedex App using [PokeApi](https://pokeapi.co/) as a backend.
 
 ## UI Requirements
 
@@ -16,7 +16,7 @@ The objective is to build a simple Pokedex App using (PokeApi)[https://pokeapi.c
 *The Pokedex app should:*
 - Be an SPA (no SSR/SSG requirement)
 - Use Yarn as a package manager
-- Use (Bulma)[https://bulma.io/] or for component styling
+- Use [Bulma](https://bulma.io/) or for component styling
 - Use Github Actions for for CI/CD
 - Use Playwright for testing
 - Use Jamstack hosting (Vercel/Netlify) for hosting
