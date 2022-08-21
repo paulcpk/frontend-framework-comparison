@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import ItemCard from '../components/ItemCard'
+import ItemCard from '@/components/ItemCard'
 
 const ITEM_DATA = {
   postId: 1,
