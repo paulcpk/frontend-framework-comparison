@@ -1,27 +1,45 @@
-import Link from 'next/link'
-
-function ItemCard({ postId, name }) {
+function DetailTable({ height, weight, types }) {
   return (
-    <Link
-      href={{
-        pathname: '/detail/[id]',
-        query: { id: postId },
-      }}
-    >
-      <a>
-        <div className="tile">
-          <figure className="image">
-            <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${postId}.png`}
-              alt={name}
-            />
-          </figure>
-          <div className="content">
-            <h3><span className="prefix">#{postId}:&nbsp;</span>{name}</h3>
-          </div>
-        </div>
-      </a>
-    </Link>
+    height &&
+    weight &&
+    types && (
+      <table className="mb-4 mt-4">
+        <tbody>
+          <tr>
+            <th>Height:</th>
+            <td>{weight}</td>
+          </tr>
+          <tr>
+            <th>Weight:</th>
+            <td>{weight}</td>
+          </tr>
+          <tr>
+            <th>Types:</th>
+            <td>{types.map((type) => type.type.name).join(', ')}</td>
+          </tr>
+        </tbody>
+      </table>
+    )
+  )
+}
+
+function ItemCard({ postId, name, height, weight, types }) {
+  return (
+    <div className="tile">
+      <figure className="image">
+        <img
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${postId}.png`}
+          alt={name}
+        />
+      </figure>
+      <div className="content">
+        <h3>
+          <span className="prefix">#{postId}:&nbsp;</span>
+          {name}
+        </h3>
+        <DetailTable {...{ height, weight, types }} />
+      </div>
+    </div>
   )
 }
 

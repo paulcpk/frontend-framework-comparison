@@ -18,6 +18,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   justify-items: stretch;
+  margin-bottom: 24px;
 }
 
 .navigation {
@@ -48,8 +49,17 @@ body {
   align-items: center;
 }
 
+.tile h3 {
+  text-align: center;
+}
+
 .prefix {
   font-weight: bold;
+}
+
+.about-page {
+  max-width: 600px;
+  margin-bottom: 24px;
 }
 
 .footer {

@@ -6,9 +6,9 @@ The objective is to build a simple Pokedex App using [PokeApi](https://pokeapi.c
 
 *The user should be able to:*
 - See an overview of the first 30 Pokemon when entering the page
-- Endless scroll with infinite loading
+- Use a "Load more" button at the bottom of the overview to load more items
 - Select a Pokemon and see additional data on a separate detail route
-- Go back via the navigation
+- Go back via a navigation button
 - Navigate to the about page, to read additional information about the app
 
 ## Technical Requirements
