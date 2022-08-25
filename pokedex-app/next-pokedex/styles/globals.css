@@ -13,13 +13,18 @@ body {
   padding: 0 16px;
 }
 
-.grid-container {
+.grid-search {
+  margin-bottom: 24px;
+}
+
+.grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   justify-items: stretch;
   margin-bottom: 24px;
 }
+
 
 .navigation {
   padding: 24px;
@@ -70,13 +75,13 @@ body {
 /* Media Queries */
 
 @media screen and (max-width: 1080px) {
-  .grid-container {
+  .grid-wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .grid-container {
+  .grid-wrapper {
     grid-template-columns: 1fr;
     gap: 16px;
   }

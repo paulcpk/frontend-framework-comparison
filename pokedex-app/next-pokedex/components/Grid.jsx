@@ -10,6 +10,8 @@ function getPostIdFromUrl(url) {
 
 function Grid() {
   const [data, setData] = useState([])
+  const [displayData, setDisplayData] = useState([])
+  const [searchValue, setSearchValue] = useState('')
   const [page, setPage] = useState(0)
 
   useEffect(() => {
@@ -26,14 +28,30 @@ function Grid() {
     fetchData()
   }, [page])
 
+  useEffect(() => {
+    const filteredCollection = data.filter((item) =>
+      item.name.includes(searchValue)
+    )
+    setDisplayData(filteredCollection)
+  }, [data, searchValue])
+
   if (!data) {
     return <p>Loading...</p>
   }
 
   return (
-    <>
-      <div className="grid-container">
-        {data.map((item) => {
+    <div className="grid-container">
+      <div className="grid-search">
+        <input
+          id="search-input"
+          className="input is-medium"
+          type="text"
+          placeholder="Search"
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+      </div>
+      <div className="grid-wrapper">
+        {displayData.map((item) => {
           const postId = getPostIdFromUrl(item.url)
           return (
             <Link
@@ -59,7 +77,7 @@ function Grid() {
       >
         Load More
       </button>
-    </>
+    </div>
   )
 }
 
