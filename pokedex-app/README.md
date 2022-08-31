@@ -58,7 +58,7 @@ There's no clean implementation of the equivalent to `React.Fragment` (`<></>`),
 
 
 
-Time to implement: ~ 0h
+Time to implement: ~ 1.5h
 
 ### SveleKit 
 
