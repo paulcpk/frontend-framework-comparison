@@ -55,8 +55,13 @@ Initial setup is quite straightforward. I like the fact the asset import can be 
 
 There's no clean implementation of the equivalent to `React.Fragment` (`<></>`), which seems odd since you're forced to use empty div-elements instead. (Some workarounds exist)[https://stackoverflow.com/questions/57901393/is-there-anything-like-react-fragment-in-vuejs-nuxtjs] but I would expect such a popular framework to feature this out of the box.
 
+The data handling and "controller"-type mechanism of defining an object with predefined methods seem quite rigid and rusprisingly cumbersome. 
 
-Time to implement: ~ 1.5h
+I'm also not so fond of the templating syntax. Defining and passing a destructured object to a child component feels kind of complicated. The variable/handler syntax reminds me of the worst parts of AngularJS or Ember.js (e.g. `<my-component v-bind="someVar" :my-title="myTitle" @click="loadMore"`)
+
+** Update: ** Yeah, the syntax is definitely no fun. Who should know intuitively when to use `<input @input="$emit('updateGrid')" />` over `<input @input="updateGrid" />`. There's no clear distinction between variables and strings syntactically.
+
+Time to implement: ~ 2.5h
 
 ### SveleKit 
 

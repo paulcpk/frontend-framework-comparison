@@ -8,14 +8,22 @@
           class="input is-medium"
           type="text"
           placeholder="Search"
+          @input="updateGrid"
         />
       </div>
       <div class="grid-wrapper">
-        <NuxtLink v-for="(item, index) in data" :key="index" :to="`/detail/${getPostIdFromUrl(item.url)}`">
+        <NuxtLink
+          v-for="(item, index) in displayData"
+          :key="index"
+          :to="`/detail/${getPostIdFromUrl(item.url)}`"
+        >
           <ItemCard :post-id="getPostIdFromUrl(item.url)" :name="item.name" />
         </NuxtLink>
       </div>
-      <button class="load-more button is-primary is-fullwidth">
+      <button
+        class="load-more button is-primary is-fullwidth"
+        @click="loadMore"
+      >
         Load More
       </button>
     </div>
@@ -35,7 +43,7 @@ export default {
     return {
       data: [],
       displayData: [],
-      searchValue: [],
+      searchValue: '',
       page: 0,
     }
   },
@@ -46,11 +54,26 @@ export default {
       }`
     ).then((res) => res.json())
     this.data = [...this.data, ...response.results]
-    console.log('this.data', this.data)
+  },
+  watch: {
+    data(curr) {
+      this.displayData = curr;
+    }
   },
   methods: {
     getPostIdFromUrl(url) {
       return url.split('/').reverse()[1]
+    },
+    loadMore() {
+      this.page++
+      this.$fetch()
+    },
+    updateGrid(e) {
+      const value = e.target.value
+      const filteredCollection = this.data.filter((item) =>
+        item.name.includes(value)
+      )
+      this.displayData = filteredCollection
     },
   },
 }
