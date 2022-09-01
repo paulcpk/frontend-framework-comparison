@@ -20,9 +20,13 @@ export default {
     const data = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${params.id}`
     ).then((res) => res.json())
-    console.log('data', data)
     return {
       data,
+    }
+  },
+  head() {
+    return {
+      title: `Pokedex App - ${this.data.name}`,
     }
   },
 }
