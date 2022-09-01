@@ -56,8 +56,6 @@ Initial setup is quite straightforward. I like the fact the asset import can be 
 There's no clean implementation of the equivalent to `React.Fragment` (`<></>`), which seems odd since you're forced to use empty div-elements instead. (Some workarounds exist)[https://stackoverflow.com/questions/57901393/is-there-anything-like-react-fragment-in-vuejs-nuxtjs] but I would expect such a popular framework to feature this out of the box.
 
 
-
-
 Time to implement: ~ 1.5h
 
 ### SveleKit 

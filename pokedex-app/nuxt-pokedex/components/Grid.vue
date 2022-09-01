@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <p v-if="$fetchState.pending">Loading...</p>
@@ -12,9 +11,9 @@
         />
       </div>
       <div class="grid-wrapper">
-        <a v-for="(item, index) in data" :key="index">
-          <ItemCard :postId="getPostIdFromUrl(item.url)" :name="item.name" />
-        </a>
+        <NuxtLink v-for="(item, index) in data" :key="index" :to="`/detail/${getPostIdFromUrl(item.url)}`">
+          <ItemCard :post-id="getPostIdFromUrl(item.url)" :name="item.name" />
+        </NuxtLink>
       </div>
       <button class="load-more button is-primary is-fullwidth">
         Load More

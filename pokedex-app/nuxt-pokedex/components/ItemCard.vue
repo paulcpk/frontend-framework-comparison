@@ -12,11 +12,16 @@
         {{ name }}
       </h3>
     </div>
+    <template v-if="height && weight && types">
+      <DetailTable :height="height" :weight="weight" :types="types" />
+    </template>
   </div>
 </template>
 
 <script>
+import DetailTable from './DetailTable.vue'
 export default {
-  props: ['name', 'postId'],
+  props: ['postId', 'name', 'height', 'weight', 'types'],
+  components: { DetailTable },
 }
 </script>
