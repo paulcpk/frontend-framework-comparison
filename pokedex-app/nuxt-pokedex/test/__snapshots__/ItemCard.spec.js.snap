@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemCard renders correctly 1`] = `
+<div
+  class="tile"
+>
+  <figure
+    class="image"
+  >
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/undefined.png"
+    />
+  </figure>
+   
+  <div
+    class="content"
+  >
+    <h3>
+      <span
+        class="prefix"
+      >
+        #: 
+      </span>
+      
+      
+    
+    </h3>
+  </div>
+   
+  <!---->
+</div>
+`;

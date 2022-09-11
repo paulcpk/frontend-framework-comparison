@@ -19,6 +19,10 @@
 
 <script>
 export default {
-  props: ['height', 'weight', 'types'],
+  props: {
+    height: Number,
+    weight: Number,
+    types: Array,
+  },
 }
 </script>

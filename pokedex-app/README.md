@@ -61,7 +61,23 @@ I'm also not so fond of the templating syntax. Defining and passing a destructur
 
 ** Update: ** Yeah, the syntax is definitely no fun. Who should know intuitively when to use `<input @input="$emit('updateGrid')" />` over `<input @input="updateGrid" />`. There's no clear distinction between variables and strings syntactically.
 
-Time to implement: ~ 2.5h
+Testing Setup: I faced significant issues implementing the basic test case for the ItemCard component. `@vue/test-utils` used instead of `@testing-library/react` seems to be buggy than the ladder. Setting the (props as described in the docs)[https://test-utils.vuejs.org/guide/#what-is-vue-test-utils], rendered the component without props:
+```const wrapper = mount(ItemCard, {
+    props: {
+      postId: 1,
+      name: 'Bulbasaur',
+    },
+  })```
+After using a workaround by using an additional `setProps()` on the wrapper component, the result still differed from the expected value due to issues with line breaks. This process seems unnecessarily cumbersome.
+
+** Update: ** The first mentioned example in the docs was false, (this is the correct way)[https://v1.test-utils.vuejs.org/api/options.html#propsdata]
+
+Time to implement: ~ 4h
+
+Breakdown:
+- App Setup and UI: 4h
+- Testing Setup: 0.5h
+- CI/CD: 0h
 
 ### SveleKit 
 

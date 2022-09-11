@@ -21,7 +21,13 @@
 <script>
 import DetailTable from './DetailTable.vue'
 export default {
-  props: ['postId', 'name', 'height', 'weight', 'types'],
+  props: {
+    postId: Number,
+    name: String,
+    height: Number,
+    weight: Number,
+    types: Array,
+  },
   components: { DetailTable },
 }
 </script>
