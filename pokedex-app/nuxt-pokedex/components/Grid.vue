@@ -57,8 +57,8 @@ export default {
   },
   watch: {
     data(curr) {
-      this.displayData = curr;
-    }
+      this.displayData = curr
+    },
   },
   methods: {
     getPostIdFromUrl(url) {

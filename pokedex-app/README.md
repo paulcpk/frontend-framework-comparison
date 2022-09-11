@@ -55,7 +55,7 @@ Initial setup is quite straightforward. I like the fact the asset import can be 
 
 There's no clean implementation of the equivalent to `React.Fragment` (`<></>`), which seems odd since you're forced to use empty div-elements instead. (Some workarounds exist)[https://stackoverflow.com/questions/57901393/is-there-anything-like-react-fragment-in-vuejs-nuxtjs] but I would expect such a popular framework to feature this out of the box.
 
-The data handling and "controller"-type mechanism of defining an object with predefined methods seem quite rigid and rusprisingly cumbersome. 
+The data handling and "controller"-type mechanism of defining an object with predefined methods seem quite rigid and rusprisingly cumbersome.
 
 I'm also not so fond of the templating syntax. Defining and passing a destructured object to a child component feels kind of complicated. The variable/handler syntax reminds me of the worst parts of AngularJS or Ember.js (e.g. `<my-component v-bind="someVar" :my-title="myTitle" @click="loadMore"`)
 
@@ -72,11 +72,15 @@ After using a workaround by using an additional `setProps()` on the wrapper comp
 
 ** Update: ** The first mentioned example in the docs was false, (this is the correct way)[https://v1.test-utils.vuejs.org/api/options.html#propsdata]
 
-Time to implement: ~ 4h
+After more issues with `@vue/test-utils` (`wrapper.text()` returns white spaces as (a unicode char)[https://unicodeplus.com/U+00A0], which makes string matching much more complicated), I was able to successfully implement playwright with only slight adjustments to the test cases. I needed to add an extra second wait time, before the grid search and navigation was fully functional. This seems to be a performance issue, but since we're running Playwright with a dev server, I think it can be overlooked.
+
+Overall the experience was less pleasent than using Next.js. Even though Nuxt seems more polished at first, with lots of plugins and CLI based setup, when push comes to shove, the smaller community size leads to plugins and libraries to be less well maintained compared to equivalents form the React ecosystem. Data handling felt quite messy, unnecessarily cumbersome. But the implementing the same test cases with Nuxt really gave me a reason to stay away. This part really does not feel like a production ready solution.
+
+Time to implement: ~ 6h
 
 Breakdown:
 - App Setup and UI: 4h
-- Testing Setup: 0.5h
+- Testing Setup: 2h
 - CI/CD: 0h
 
 ### SveleKit 

@@ -8,13 +8,12 @@
     </figure>
     <div class="content">
       <h3>
-        <span class="prefix">#{{ postId }}:&nbsp;</span>
-        {{ name }}
+        <span class="prefix">#{{ postId }}:&nbsp;</span>{{ name }}
       </h3>
+      <template v-if="height && weight && types">
+        <DetailTable :height="height" :weight="weight" :types="types" />
+      </template>
     </div>
-    <template v-if="height && weight && types">
-      <DetailTable :height="height" :weight="weight" :types="types" />
-    </template>
   </div>
 </template>
 

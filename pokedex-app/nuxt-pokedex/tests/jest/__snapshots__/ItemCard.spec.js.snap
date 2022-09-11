@@ -22,11 +22,10 @@ exports[`ItemCard renders correctly 1`] = `
         #: 
       </span>
       
-      
     
     </h3>
+     
+    <!---->
   </div>
-   
-  <!---->
 </div>
 `;
