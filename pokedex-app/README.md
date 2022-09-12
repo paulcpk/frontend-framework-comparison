@@ -85,4 +85,13 @@ Breakdown:
 
 ### SveleKit 
 
-Time to implement: ~ 0h
+I highly anticipate the process here, as this framework gets a decent amount of hype, but I've only worked with it rudimentarily.
+
+I'm having trouble figuring out where and how to import my styles. Still no clue after 30m+ of searching. They changed the bundler to Vite a couple of months back, changind the workflow entirely.
+
+Time to implement: ~ 0.5h
+
+Breakdown:
+- App Setup and UI: 0.5h
+- Testing Setup: 0h
+- CI/CD: 0h
