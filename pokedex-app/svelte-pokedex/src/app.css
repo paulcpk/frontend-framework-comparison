@@ -25,7 +25,6 @@ body {
   margin-bottom: 24px;
 }
 
-
 .navigation {
   padding: 24px;
   display: flex;
@@ -73,7 +72,6 @@ body {
 }
 
 /* Media Queries */
-
 @media screen and (max-width: 1080px) {
   .grid-wrapper {
     grid-template-columns: 1fr 1fr;

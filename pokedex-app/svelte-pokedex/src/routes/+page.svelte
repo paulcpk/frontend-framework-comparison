@@ -1,3 +1,5 @@
+<script>
+	import Grid from '../components/Grid.svelte';
+</script>
 
-
-<h2>Here more content</h2>
+<Grid />
