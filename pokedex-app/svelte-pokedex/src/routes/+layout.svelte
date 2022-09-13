@@ -1,5 +1,6 @@
 <script>
-	import 'bulma/css/bulma.min.css';
+	import '~/bulma/css/bulma.min.css';
+	import '@/app.css';
 	import Navigation from '../components/Navigation.svelte';
 	import Footer from '../components/Footer.svelte';
 </script>

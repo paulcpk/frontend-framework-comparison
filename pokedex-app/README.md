@@ -87,11 +87,12 @@ Breakdown:
 
 I highly anticipate the process here, as this framework gets a decent amount of hype, but I've only worked with it rudimentarily.
 
-I'm having trouble figuring out where and how to import my styles. Still no clue after 30m+ of searching. They changed the bundler to Vite a couple of months back, changind the workflow entirely.
+I'm having trouble figuring out where and how to import my global stylesheet. Still no clue after 30m+ of searching. They changed the bundler to Vite a couple of months back, changind the workflow entirely. Seems like the proper way is to import it via the top level `+layout.svelte` file. Feels a bit odd to me.
 
-Time to implement: ~ 0.5h
+
+Time to implement: ~ 1h
 
 Breakdown:
-- App Setup and UI: 0.5h
+- App Setup and UI: 1h
 - Testing Setup: 0h
 - CI/CD: 0h

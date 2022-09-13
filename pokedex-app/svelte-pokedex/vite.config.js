@@ -6,7 +6,8 @@ const config = {
 	plugins: [sveltekit()],
 	resolve: {
 		alias: {
-			bulma: path.resolve(__dirname, 'node_modules/bulma'),
+			'@': path.resolve(__dirname, 'src'),
+			'~': path.resolve(__dirname, 'node_modules'),
 		}
 	},
 	server: {
