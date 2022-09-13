@@ -63,7 +63,7 @@ function Grid() {
             >
               <a>
                 <ItemCard
-                  postId={getPostIdFromUrl(item.url)}
+                  postId={postId}
                   name={item.name}
                 />
               </a>

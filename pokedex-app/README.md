@@ -89,6 +89,10 @@ I highly anticipate the process here, as this framework gets a decent amount of 
 
 I'm having trouble figuring out where and how to import my global stylesheet. Still no clue after 30m+ of searching. They changed the bundler to Vite a couple of months back, changind the workflow entirely. Seems like the proper way is to import it via the top level `+layout.svelte` file. Feels a bit odd to me.
 
+After setting up the data fetching (according to the docs)[https://kit.svelte.dev/docs/routing#page-page-js], I realize that I really dislike this `/myroute/+layout.svelte`, `/myroute/+page.svelte`, `/myroute/+page.js` syntax. I have less than a dozen files and I already feel confused looking at this. 
+
+Same goes for the (Directives Syntax)[https://svelte.dev/docs#template-syntax-element-directives]. Similarly to my criticism of Nuxt's syntax, this feels quite confusing as well. React's data and attribute handling just feels much closer to using plain HTML and JS, which makes it more intuitive.
+
 
 Time to implement: ~ 1h
 
