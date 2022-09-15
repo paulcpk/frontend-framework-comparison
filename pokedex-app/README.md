@@ -103,10 +103,12 @@ I keep asking myself, "Who would come up with that and think it was a good idea?
 
 This doesn't work btw. Still struggling to fetch my `id` param from the URL. It seems like they completely revamped the API for this, all the Stackoverflow posts dated older than ~ 6 months are useless.
 
+More highly esotheric syntax for observing variable changes: (https://stackoverflow.com/questions/56983938/in-svelte-how-to-console-logyes-when-a-variable-changed)[https://stackoverflow.com/questions/56983938/in-svelte-how-to-console-logyes-when-a-variable-changed]
 
-Time to implement: ~ 1h
+
+Time to implement: ~ 2.5h
 
 Breakdown:
-- App Setup and UI: 1h
+- App Setup and UI: 2.5h
 - Testing Setup: 0h
 - CI/CD: 0h

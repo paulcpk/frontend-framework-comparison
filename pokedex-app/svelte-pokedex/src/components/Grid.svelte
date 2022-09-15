@@ -12,14 +12,26 @@
 	let searchValue = '';
 	let page = 0;
 
-	onMount(async function () {
+	async function fetchData() {
 		const response = await fetch(
 			`https://pokeapi.co/api/v2/pokemon?limit=${FETCH_LIMIT}&offset=${page * FETCH_LIMIT}`
 		);
 		const res = await response.json();
 		data = [...data, ...res.results];
-		console.log('data', data);
+	}
+
+	onMount(async function () {
+		fetchData();
 	});
+
+	$: if (page) {
+		fetchData();
+	}
+
+	$: if (searchValue || data) {
+		const filteredCollection = data.filter((item) => item.name.includes(searchValue));
+		displayData = filteredCollection;
+	}
 </script>
 
 <div class="grid-container">
@@ -33,12 +45,14 @@
 		/>
 	</div>
 	<div class="grid-wrapper">
-		{#each data as item}
+		{#each displayData as item}
 			{@const postId = getPostIdFromUrl(item.url)}
 			<a href={`detail/${getPostIdFromUrl(item.url)}`}>
 				<ItemCard name={item.name} postId={getPostIdFromUrl(item.url)} />
 			</a>
 		{/each}
 	</div>
-	<button class="load-more button is-primary is-fullwidth"> Load More </button>
+	<button class="load-more button is-primary is-fullwidth" on:click={() => page++}>
+		Load More
+	</button>
 </div>
