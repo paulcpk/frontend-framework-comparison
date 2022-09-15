@@ -1,6 +1,10 @@
 <script>
+	import ItemCardTable from './ItemCardTable.svelte';
 	export let postId;
-	export let name;
+	export let name = undefined;;
+	export let height = undefined;
+	export let weight = undefined;
+	export let types = undefined;
 </script>
 
 <div class="tile">
@@ -15,5 +19,8 @@
 			<span class="prefix">#{postId}:&nbsp;</span>
 			{name}
 		</h3>
+		{#if height || weight || types}
+			<ItemCardTable {height} {weight} {types} />
+		{/if}
 	</div>
 </div>

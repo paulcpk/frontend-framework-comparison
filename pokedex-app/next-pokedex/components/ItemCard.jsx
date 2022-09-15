@@ -7,7 +7,7 @@ function DetailTable({ height, weight, types }) {
         <tbody>
           <tr>
             <th>Height:</th>
-            <td>{weight}</td>
+            <td>{height}</td>
           </tr>
           <tr>
             <th>Weight:</th>
