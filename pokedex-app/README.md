@@ -93,6 +93,16 @@ After setting up the data fetching (according to the docs)[https://kit.svelte.de
 
 Same goes for the (Directives Syntax)[https://svelte.dev/docs#template-syntax-element-directives]. Similarly to my criticism of Nuxt's syntax, this feels quite confusing as well. React's data and attribute handling just feels much closer to using plain HTML and JS, which makes it more intuitive.
 
+The way to fetch URL params is (just ridiculous)[https://kit.svelte.dev/docs/routing#page-page-svelte]: 
+```
+/** @type {import('./$types').PageData} */
+  export let data;
+```
+
+I keep asking myself, "Who would come up with that and think it was a good idea?". 
+
+This doesn't work btw. Still struggling to fetch my `id` param from the URL. It seems like they completely revamped the API for this, all the Stackoverflow posts dated older than ~ 6 months are useless.
+
 
 Time to implement: ~ 1h
 

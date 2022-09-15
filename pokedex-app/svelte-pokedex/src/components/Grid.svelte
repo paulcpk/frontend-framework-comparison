@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import Footer from './Footer.svelte';
 	import ItemCard from './ItemCard.svelte';
 
 	export function getPostIdFromUrl(url) {
@@ -40,6 +39,6 @@
 				<ItemCard name={item.name} postId={getPostIdFromUrl(item.url)} />
 			</a>
 		{/each}
-		<button class="load-more button is-primary is-fullwidth"> Load More </button>
 	</div>
+	<button class="load-more button is-primary is-fullwidth"> Load More </button>
 </div>

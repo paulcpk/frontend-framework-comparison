@@ -3,8 +3,6 @@ import Link from 'next/link'
 import ItemCard from '../../components/ItemCard'
 
 function Detail({ data }) {
-  console.log('data', data)
-
   return (
     <>
       <Head>
