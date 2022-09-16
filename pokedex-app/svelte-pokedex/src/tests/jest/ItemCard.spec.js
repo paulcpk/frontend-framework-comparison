@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/svelte';
-import ItemCard from '@/components/ItemCard.svelte';
+import { render, screen } from '@testing-library/svelte'
+import ItemCard from '@/components/ItemCard.svelte'
 
 const ITEM_DATA = {
 	postId: 1,
@@ -7,14 +7,18 @@ const ITEM_DATA = {
 	height: 100,
 	weight: 100,
 	types: [{ type: { name: 'grass' } }]
-};
+}
+describe('ItemCard', () => {
+	it('renders a heading', () => {
+		render(ItemCard, ITEM_DATA)
+		const heading = screen.getByRole('heading', {
+			name: `#${ITEM_DATA.postId}: ${ITEM_DATA.name}`
+		})
+		expect(heading).toBeInTheDocument()
+	})
 
-test('ItemCard: shows proper heading when rendered', () => {
-	render(ItemCard);
-	// const heading = screen.getByRole('heading', {
-	// 	name: `#${ITEM_DATA.postId}: ${ITEM_DATA.name}`
-	// });
-	const node = screen.queryByText("#");
-	// expect(heading).not.toBeNull();
-	expect(node).not.toBeNull();
-});
+	it('renders correctly', () => {
+		const { container } = render(ItemCard, ITEM_DATA)
+		expect(container).toMatchSnapshot()
+	})
+})

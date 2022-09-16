@@ -46,7 +46,6 @@
 	</div>
 	<div class="grid-wrapper">
 		{#each displayData as item}
-			{@const postId = getPostIdFromUrl(item.url)}
 			<a href={`detail/${getPostIdFromUrl(item.url)}`}>
 				<ItemCard name={item.name} postId={getPostIdFromUrl(item.url)} />
 			</a>

@@ -1,7 +1,7 @@
 <script>
-    import ItemCard from './ItemCard.svelte';
+  import ItemCardTable from './ItemCardTable.svelte';
 	export let postId;
-	export let name;
+	export let name = '';
 </script>
 
 <div class="tile">
@@ -16,6 +16,6 @@
 			<span class="prefix">#{postId}:&nbsp;</span>
 			{name}
 		</h3>
-        <ItemCard {...$$restProps} />
+        <ItemCardTable {...$$restProps} />
 	</div>
 </div>

@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemCard renders correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="tile"
+    >
+      <figure
+        class="image"
+      >
+        <img
+          alt="Bulbasaur"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+      </figure>
+       
+      <div
+        class="content"
+      >
+        <h3>
+          <span
+            class="prefix"
+          >
+            #
+            1
+            : 
+          </span>
+           
+          Bulbasaur
+        </h3>
+         
+        <table
+          class="mb-4 mt-4"
+        >
+          <tbody>
+            <tr>
+              <th>
+                Height:
+              </th>
+               
+              <td>
+                100
+              </td>
+            </tr>
+             
+            <tr>
+              <th>
+                Weight:
+              </th>
+               
+              <td>
+                100
+              </td>
+            </tr>
+             
+            <tr>
+              <th>
+                Types:
+              </th>
+               
+              <td>
+                grass
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+</body>
+`;
