@@ -105,10 +105,11 @@ This doesn't work btw. Still struggling to fetch my `id` param from the URL. It 
 
 More highly esotheric syntax for observing variable changes: (https://stackoverflow.com/questions/56983938/in-svelte-how-to-console-logyes-when-a-variable-changed)[https://stackoverflow.com/questions/56983938/in-svelte-how-to-console-logyes-when-a-variable-changed]
 
+Setting up tests was super tough, (This post helped)[https://www.roboleary.net/2021/11/18/svelte-app-testing-jest.html] but still required some adjustments.
 
-Time to implement: ~ 2.5h
+Time to implement: ~ 6.5h
 
 Breakdown:
-- App Setup and UI: 2.5h
-- Testing Setup: 0h
+- App Setup and UI: 4.5h
+- Testing Setup: 2h
 - CI/CD: 0h
