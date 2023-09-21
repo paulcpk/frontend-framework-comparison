@@ -113,3 +113,13 @@ Breakdown:
 - App Setup and UI: 4.5h
 - Testing Setup: 2h
 - CI/CD: 0h
+
+### Astro.js 
+
+
+Time to implement: ~ 0.5h
+
+Breakdown:
+- App Setup and UI: 0h
+- Testing Setup: 0h
+- CI/CD: 0h
