@@ -128,9 +128,11 @@ https://docs.astro.build/en/guides/server-side-rendering/#enabling-ssr-in-your-p
 
 It seems like Astro could be in fact a more elegant replacement for Next.js or Gatsby, especially for content driven apps.
 
-Time to implement: ~ 0.5h
+I was extremely fast here, since I could completely reuse some of the React components from the Next.js repo (I could have easily used the vue or svelte components as well).
+
+Time to implement: ~ 2h
 
 Breakdown:
-- App Setup and UI: 0h
+- App Setup and UI: 2h
 - Testing Setup: 0h
 - CI/CD: 0h
