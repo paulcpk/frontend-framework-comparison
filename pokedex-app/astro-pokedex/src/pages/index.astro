@@ -1,11 +1,18 @@
 ---
+import Grid from "../components/Grid.jsx";
 import Layout from "../layouts/Layout.astro";
+
+export const prerender = true;
+
+const FETCH_LIMIT = 30;
+
+const response = await fetch(
+  `https://pokeapi.co/api/v2/pokemon?limit=${FETCH_LIMIT}
+  }`
+);
+const data = await response.json();
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1 class="text-3xl font-bold color-blue underline">Hello world!</h1>
-  </main>
+<Layout title="Pokedex App">
+  <Grid items={data.results} startPage={0} client:load />
 </Layout>
-
-<style></style>

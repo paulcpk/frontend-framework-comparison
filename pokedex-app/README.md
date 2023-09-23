@@ -116,6 +116,17 @@ Breakdown:
 
 ### Astro.js 
 
+I had a pretty good time until I tried to implement dynamic routes. Astro's conventions are great for converting static content, like Markdown into HTML + Styles. However it seems to me like just a glorified Blogging engine.
+
+At first, the Markdown flavor of the components and pages makes it feel like everything is just super easy to setup with one line of code. Once you try to do something a bit more complicated, you'll most likely need to write your components in React's JSX/TSX syntax anyway, and you're back to writing a React app with a slightly less sophisticated API for providing data to SSR/SSG rendered components.
+
+See the API: https://docs.astro.build/en/core-concepts/routing/#static-ssg-mode
+
+*Correction*: I just needed to prioritize SSR over SSG, then things make more sense.
+
+https://docs.astro.build/en/guides/server-side-rendering/#enabling-ssr-in-your-project
+
+It seems like Astro could be in fact a more elegant replacement for Next.js or Gatsby, especially for content driven apps.
 
 Time to implement: ~ 0.5h
 

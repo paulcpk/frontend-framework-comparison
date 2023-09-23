@@ -1,0 +1,13 @@
+---
+import ItemCard from "../../components/ItemCard.jsx";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+const data = await response.json();
+---
+
+<Layout title={`Pokedex App - ${data.name}`}>
+  <a className="button is-ghost mb-4" href="/">&lsaquo;&nbsp;Back</a>
+  <ItemCard postId={data.id} {...data} />
+</Layout>
