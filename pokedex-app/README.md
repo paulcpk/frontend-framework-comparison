@@ -130,9 +130,9 @@ It seems like Astro could be in fact a more elegant replacement for Next.js or G
 
 I was extremely fast here, since I could completely reuse some of the React components from the Next.js repo (I could have easily used the vue or svelte components as well).
 
-Time to implement: ~ 2h
+Time to implement: ~ 2.5h
 
 Breakdown:
 - App Setup and UI: 2h
-- Testing Setup: 0h
+- Testing Setup: 0.5h
 - CI/CD: 0h

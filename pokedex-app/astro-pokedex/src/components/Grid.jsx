@@ -1,42 +1,42 @@
-import { useState, useEffect } from "react";
-import ItemCard from "./ItemCard.jsx";
+import React, { useState, useEffect } from 'react'
+import ItemCard from './ItemCard.jsx'
 
-const FETCH_LIMIT = 30;
+const FETCH_LIMIT = 30
 
 function getPostIdFromUrl(url) {
-  return url.split("/").reverse()[1];
+  return url.split('/').reverse()[1]
 }
 
 function Grid({ items = [], startPage }) {
-  console.log("items", items);
-  const [data, setData] = useState(items);
-  const [displayData, setDisplayData] = useState(items);
-  const [searchValue, setSearchValue] = useState("");
-  const [page, setPage] = useState(startPage);
+  const [data, setData] = useState(items)
+  const [displayData, setDisplayData] = useState(items)
+  const [searchValue, setSearchValue] = useState('')
+  const [page, setPage] = useState(startPage)
 
   useEffect(() => {
     // prevent run on first render
     if (page !== startPage) {
       const fetchData = async () => {
+        // eslint-disable-next-line no-undef
         const response = await fetch(
           `https://pokeapi.co/api/v2/pokemon?limit=${FETCH_LIMIT}&offset=${
             page * FETCH_LIMIT
           }`
-        );
-        const res = await response.json();
-        setData([...data, ...res.results]);
-      };
-  
-      fetchData();
+        )
+        const res = await response.json()
+        setData([...data, ...res.results])
+      }
+
+      fetchData()
     }
-  }, [page]);
+  }, [page])
 
   useEffect(() => {
     const filteredCollection = data.filter((item) =>
       item.name.includes(searchValue)
-    );
-    setDisplayData(filteredCollection);
-  }, [data, searchValue]);
+    )
+    setDisplayData(filteredCollection)
+  }, [data, searchValue])
 
   return (
     <div className="grid-container">
@@ -51,12 +51,12 @@ function Grid({ items = [], startPage }) {
       </div>
       <div className="grid-wrapper">
         {displayData.map((item) => {
-          const postId = getPostIdFromUrl(item.url);
+          const postId = getPostIdFromUrl(item.url)
           return (
             <a href={`/detail/${postId}`} key={postId}>
               <ItemCard postId={postId} name={item.name} />
             </a>
-          );
+          )
         })}
       </div>
       <button
@@ -66,7 +66,7 @@ function Grid({ items = [], startPage }) {
         Load More
       </button>
     </div>
-  );
+  )
 }
 
-export default Grid;
+export default Grid

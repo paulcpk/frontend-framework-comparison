@@ -2,6 +2,7 @@
   "env": {
     "jest/globals": true
   },
+  "ignorePatterns": ["node_modules"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -17,5 +18,8 @@
   "plugins": [
     "prettier",
     "jest"
-  ]
+  ],
+  "rules": {
+    "react/prop-types": 0
+  }
 }
