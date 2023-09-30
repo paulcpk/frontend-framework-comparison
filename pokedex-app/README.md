@@ -30,6 +30,8 @@ I will build the apps using the three frameworks in the following order (going f
 
 Since I will spend some more time in the first run with style and asset considerations, this should even out nicely once I get to SvelteKit.
 
+*UPDATE*: I added Astro.js to the list as well
+
 ### Next.js
 
 The latest version of Next.js causes `Parsing error: Cannot find module 'next/babel'` when importing modules out of the box - can be fixed easily, however not very reassuring.
@@ -62,12 +64,14 @@ I'm also not so fond of the templating syntax. Defining and passing a destructur
 ** Update: ** Yeah, the syntax is definitely no fun. Who should know intuitively when to use `<input @input="$emit('updateGrid')" />` over `<input @input="updateGrid" />`. There's no clear distinction between variables and strings syntactically.
 
 Testing Setup: I faced significant issues implementing the basic test case for the ItemCard component. `@vue/test-utils` used instead of `@testing-library/react` seems to be buggy than the ladder. Setting the (props as described in the docs)[https://test-utils.vuejs.org/guide/#what-is-vue-test-utils], rendered the component without props:
-```const wrapper = mount(ItemCard, {
+```
+const wrapper = mount(ItemCard, {
     props: {
       postId: 1,
       name: 'Bulbasaur',
     },
-  })```
+  })
+```
 After using a workaround by using an additional `setProps()` on the wrapper component, the result still differed from the expected value due to issues with line breaks. This process seems unnecessarily cumbersome.
 
 ** Update: ** The first mentioned example in the docs was false, (this is the correct way)[https://v1.test-utils.vuejs.org/api/options.html#propsdata]
