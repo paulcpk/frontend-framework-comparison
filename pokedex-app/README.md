@@ -2,9 +2,18 @@
 
 The objective is to build a simple Pokedex App using [PokeApi](https://pokeapi.co/) as a backend.
 
+## Live Deployments
+
+- [Next.js (React)](https://ffc-next.vercel.app/)
+- [Nuxt (Vue.js)](https://ffc-nuxt.vercel.app/)
+- [SvelteKit (Svelte)](https://ffc-svelte.vercel.app/)
+- [Astro](https://ffc-astro.vercel.app/)
+
+
 ## UI Requirements
 
-*The user should be able to:*
+_The user should be able to:_
+
 - See an overview of the first 30 Pokemon when entering the page
 - Use a "Load more" button at the bottom of the overview to load more items
 - Select a Pokemon and see additional data on a separate detail route
@@ -13,7 +22,8 @@ The objective is to build a simple Pokedex App using [PokeApi](https://pokeapi.c
 
 ## Technical Requirements
 
-*The Pokedex app should:*
+_The Pokedex app should:_
+
 - Be an SPA (no SSR/SSG requirement)
 - Use Yarn as a package manager
 - Use [Bulma](https://bulma.io/) or for component styling
@@ -23,14 +33,16 @@ The objective is to build a simple Pokedex App using [PokeApi](https://pokeapi.c
 
 ## Thoughts/Rebuttal
 
-I will build the apps using the three frameworks in the following order (going from most to least familiarity):
+I will build the apps using the four frameworks in the following order (going from most to least familiarity):
+
 1. Next.js
 2. Nuxt
 3. SvelteKit
+4. Astro
 
 Since I will spend some more time in the first run with style and asset considerations, this should even out nicely once I get to SvelteKit.
 
-*UPDATE*: I added Astro.js to the list as well
+_UPDATE_: I added Astro.js to the list as well
 
 ### Next.js
 
@@ -38,7 +50,7 @@ The latest version of Next.js causes `Parsing error: Cannot find module 'next/ba
 
 Routing and the usage of the `Link` component still feels a bit strange, mainly due to passing an additional `<a>` element to the component for it to work. Just the work required to make setup an [active state on a navigation link](https://github.com/vercel/next.js/tree/canary/examples/active-class-name) feels disproportionate.
 
-*Styling:* None of the built in or 3rd party libraries (CSS-Modules, Next.js: Styled JSX, Styled-Components, etc.) feel particulartly appealing. Using styles in the React ecosystem always feels like an akward workaround for something that the Angular-CLI or Ember-CLI solved perfectly, namely auto resolving stylesheets on a component level.
+_Styling:_ None of the built in or 3rd party libraries (CSS-Modules, Next.js: Styled JSX, Styled-Components, etc.) feel particulartly appealing. Using styles in the React ecosystem always feels like an akward workaround for something that the Angular-CLI or Ember-CLI solved perfectly, namely auto resolving stylesheets on a component level.
 
 In this run, I spent some time adding and removing different CSS or component libraries, until I found a setup that I liked. Next.js didn't always play nice with that.
 
@@ -47,13 +59,14 @@ Although quite feature rich in total, Next.js feels surprisingly rugged to me, c
 Time to implement: ~ 6.5h
 
 Breakdown:
+
 - App Setup and UI: 4.5h
 - Testing Setup: 1.5h
 - CI/CD: 0.5h
 
 ### Nuxt.js
 
-Initial setup is quite straightforward. I like the fact the asset import can be managed centrally through `nuxt.config.js` instead of importing them form different components as with React/Next.js. 
+Initial setup is quite straightforward. I like the fact the asset import can be managed centrally through `nuxt.config.js` instead of importing them form different components as with React/Next.js.
 
 There's no clean implementation of the equivalent to `React.Fragment` (`<></>`), which seems odd since you're forced to use empty div-elements instead. (Some workarounds exist)[https://stackoverflow.com/questions/57901393/is-there-anything-like-react-fragment-in-vuejs-nuxtjs] but I would expect such a popular framework to feature this out of the box.
 
@@ -64,6 +77,7 @@ I'm also not so fond of the templating syntax. Defining and passing a destructur
 ** Update: ** Yeah, the syntax is definitely no fun. Who should know intuitively when to use `<input @input="$emit('updateGrid')" />` over `<input @input="updateGrid" />`. There's no clear distinction between variables and strings syntactically.
 
 Testing Setup: I faced significant issues implementing the basic test case for the ItemCard component. `@vue/test-utils` used instead of `@testing-library/react` seems to be buggy than the ladder. Setting the (props as described in the docs)[https://test-utils.vuejs.org/guide/#what-is-vue-test-utils], rendered the component without props:
+
 ```
 const wrapper = mount(ItemCard, {
     props: {
@@ -72,6 +86,7 @@ const wrapper = mount(ItemCard, {
     },
   })
 ```
+
 After using a workaround by using an additional `setProps()` on the wrapper component, the result still differed from the expected value due to issues with line breaks. This process seems unnecessarily cumbersome.
 
 ** Update: ** The first mentioned example in the docs was false, (this is the correct way)[https://v1.test-utils.vuejs.org/api/options.html#propsdata]
@@ -83,27 +98,29 @@ Overall the experience was less pleasent than using Next.js. Even though Nuxt se
 Time to implement: ~ 6h
 
 Breakdown:
+
 - App Setup and UI: 4h
 - Testing Setup: 2h
 - CI/CD: 0h
 
-### SveleKit 
+### SveleKit
 
 I highly anticipate the process here, as this framework gets a decent amount of hype, but I've only worked with it rudimentarily.
 
 I'm having trouble figuring out where and how to import my global stylesheet. Still no clue after 30m+ of searching. They changed the bundler to Vite a couple of months back, changind the workflow entirely. Seems like the proper way is to import it via the top level `+layout.svelte` file. Feels a bit odd to me.
 
-After setting up the data fetching (according to the docs)[https://kit.svelte.dev/docs/routing#page-page-js], I realize that I really dislike this `/myroute/+layout.svelte`, `/myroute/+page.svelte`, `/myroute/+page.js` syntax. I have less than a dozen files and I already feel confused looking at this. 
+After setting up the data fetching (according to the docs)[https://kit.svelte.dev/docs/routing#page-page-js], I realize that I really dislike this `/myroute/+layout.svelte`, `/myroute/+page.svelte`, `/myroute/+page.js` syntax. I have less than a dozen files and I already feel confused looking at this.
 
 Same goes for the (Directives Syntax)[https://svelte.dev/docs#template-syntax-element-directives]. Similarly to my criticism of Nuxt's syntax, this feels quite confusing as well. React's data and attribute handling just feels much closer to using plain HTML and JS, which makes it more intuitive.
 
-The way to fetch URL params is (just ridiculous)[https://kit.svelte.dev/docs/routing#page-page-svelte]: 
+The way to fetch URL params is (just ridiculous)[https://kit.svelte.dev/docs/routing#page-page-svelte]:
+
 ```
 /** @type {import('./$types').PageData} */
   export let data;
 ```
 
-I keep asking myself, "Who would come up with that and think it was a good idea?". 
+I keep asking myself, "Who would come up with that and think it was a good idea?".
 
 This doesn't work btw. Still struggling to fetch my `id` param from the URL. It seems like they completely revamped the API for this, all the Stackoverflow posts dated older than ~ 6 months are useless.
 
@@ -114,11 +131,12 @@ Setting up tests was super tough, (This post helped)[https://www.roboleary.net/2
 Time to implement: ~ 6.5h
 
 Breakdown:
+
 - App Setup and UI: 4.5h
 - Testing Setup: 2h
 - CI/CD: 0h
 
-### Astro.js 
+### Astro.js
 
 I had a pretty good time until I tried to implement dynamic routes. Astro's conventions are great for converting static content, like Markdown into HTML + Styles. However it seems to me like just a glorified Blogging engine.
 
@@ -126,7 +144,7 @@ At first, the Markdown flavor of the components and pages makes it feel like eve
 
 See the API: https://docs.astro.build/en/core-concepts/routing/#static-ssg-mode
 
-*Correction*: I just needed to prioritize SSR over SSG, then things make more sense.
+_Correction_: I just needed to prioritize SSR over SSG, then things make more sense.
 
 https://docs.astro.build/en/guides/server-side-rendering/#enabling-ssr-in-your-project
 
@@ -141,6 +159,7 @@ I will definitely consider using this in one of my upcoming projects.
 Time to implement: ~ 3.5h
 
 Breakdown:
+
 - App Setup and UI: 2h
 - Testing Setup: 1.5h
 - CI/CD: 0h
