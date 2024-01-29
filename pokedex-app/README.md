@@ -7,8 +7,6 @@ The objective is to build a simple Pokedex App using [PokeApi](https://pokeapi.c
 - [Next.js (React)](https://ffc-next.vercel.app/)
 - [Nuxt (Vue.js)](https://ffc-nuxt.vercel.app/)
 - [SvelteKit (Svelte)](https://ffc-svelte.vercel.app/)
-- [Astro](https://ffc-astro.vercel.app/)
-
 
 ## UI Requirements
 
